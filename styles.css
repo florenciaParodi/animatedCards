@@ -1,0 +1,87 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: black;
+}
+
+.cards{
+    display: flex;
+    width: 100%; /*colocaré el 130% para que las cards tengan el espacio necesario para moverse con el efecto*/
+    padding: 50px;
+}
+
+.cards .card{
+    background-color: rgb(48, 96, 0);
+    color: white;
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    transition: all 0.3s ease; /*animación - transición de todos los elementos a los 0.3 segundos */
+
+    box-shadow: -3px 0px 10px rgba(127, 255, 0, 0.3), -4px 0px 10px rgba(127, 255, 0, 0.2), -5px 0px 10px rgba(127, 255, 0, 0.1);
+}
+
+.cards .card a{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cards .card a:hover{
+    color: chartreuse;
+}
+
+.cards .card .header{
+    flex: 1; /*esta propiedad con el valor 1 hace el elemento ocupe la mayor parte del contenedor*/
+}
+
+.cards .card:hover{
+    margin-right: 80px; /*con este margin-right hago que la tarjeta empuje a las demás*/
+    transform: rotate(3deg) translateY(-15px); /*rotación de 3 grados de la card y sobre el eje Y -15px se irá hacia arriba*/
+}
+
+.cards .card .header .date{
+    padding: 10px 0px;
+}
+
+.cards .card .header .title{
+    font-size: 28px;
+}
+
+.cards .card .footer .autor a{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cards .card .footer img{
+    width: 48px;
+    border-radius: 50%;
+}
+
+.cards .card .footer .shadow{
+    box-shadow: -4px 4px 5px chartreuse;
+}
+
+.cards .card[class*='element-2'] img{ /*editando la imágen del elemento 2 ya que no encontré del mismo tamaño*/
+    width: 55px;
+    border-radius: 50%;
+}
+
+.cards .card[class*='element']{
+    margin-left: -100px;
+} /*aquí estoy buscando dentro de card que está dentro de cards el elemento que tenga al menos la clase "element".
+con el margin-left lo que hago es quitarle 100px de margen hacia la izquierda para que las cards se encimen*/
+
+.element-1:hover,
+.element-2:hover{
+    margin-left: -130px;
+}
+
